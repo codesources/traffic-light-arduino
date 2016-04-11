@@ -1,0 +1,46 @@
+﻿    -------   Manuel   ---------
+CONNECTION ARDUINO ET LED
+    >>---------PORT ENTREE------------------------
+    PORT 42 == POWER // control processing
+    PORT 26 == Bonton pousoir pieton
+    <<---------PORT SORTI-------------------------
+    Ligne 1
+    PORT (2,3,4,5) ===> (LED ROUGE, LED JAUNE, LED VERT PASSAGE, LED VERT VIREMENT)
+    Ligne 2
+    PORT (6,7,8,9) ===> (LED ROUGE,LED JAUNE, LED VERT PASSAGE, LED VERT VIREMENT)
+    Ligne 3
+    PORT (10,11,12,13) ===> (LED ROUGE,LED JAUNE, LED VERT PASSAGE, LED VERT VIREMENT)
+    Ligne 4
+    PORT (23,24,25,26) ===> (LED ROUGE,LED JAUNE, LED VERT PASSAGE, LED VERT VIREMENT)
+    <<--------AFFICHEUR 7 SEGMENT-------------------
+    PORT (53,52,51,50,49,48,47) == >(A,B,C,D,E,F,G) 
+    <<--------- TONALITÉ  ----------------
+    PORT 45 
+    <<------- DEL RGB POUR LE PIETON----------------
+    PORT (28,29) ===> (R,G)  Cote 1 et 3
+    PORT (30,31) ===> (R,G)  Cote 2 et 4
+   
+      >>-----------  AUTRE VARIABLE  ----------------
+  char demande;  verificateur pour la demande de passager avec bouton pousoir pour savoir
+  etat de la presence de passagers
+  demande = N Lors il y'a aucun passager
+  demande = A Lors le passagers appui pendant le feu est a jaune
+  demande = P Lors signal la presence des passagers
+    ================================================ ===================== */
+/**==============================================================
+                  Control visuel de feu avec processing
+================================================================
+    -------   Manuel   ---------
+    -CONFIGURER LA CARTE AVEC ARDUINO LIBRARY EXEMPLE FIRMATA->SIMPLEDIGITALFIRMATA
+                                                      ----------------------------
+    
+    >>---------PORT ENTREE-------------------------
+    Ligne 1 et 3
+    PORT (2,3,4,5) ===> (LED ROUGE, LED JAUNE, LED VERT PASSAGE, LED VERT VIREMENT)
+    Ligne 2 et 4
+    PORT (6,7,8,9) ===> (LED ROUGE,LED JAUNE, LED VERT PASSAGE, LED VERT VIREMENT)
+   >>---------PORT ENTREE-------------------------
+   PORT 10 doit etre connecter avec PORT 47 
+   <<----------PORT SORTI-----------------------
+   PORT 11 bouton power interface
+================================================================*/
